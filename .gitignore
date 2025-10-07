@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+yarn.lock
+
+# Expo / Metro
+.expo/
+.expo-shared/
+.expo-dev/
+.expo/web-cache/
+
+# Next.js / Web build artefacts
+.next/
+out/
+web-build/
+dist/
+build/
+.turbo/
+
+# Native build artefacts
+android/
+ios/
+apps/native/android/
+apps/native/ios/
+**/Pods/
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+expo-error.log*
+*.log
+
+# Environment files
+.env*
+
+# Editor / OS cruft
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

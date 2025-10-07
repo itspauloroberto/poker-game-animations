@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css?family=Anonymous+Pro");
+
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: rgba(10, 15, 20, 0.97);
+  z-index: 9999;
+  font-family: "Anonymous Pro", monospace;
+}
+
+.welcome-text {
+  color: rgba(255, 255, 255, 0.9);
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  padding: 0 0.5em;
+  position: relative;
+  display: inline-flex;
+  animation: cursorShift 0.4s ease forwards 3.4s;
+}
+
+.welcome-word {
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+  margin: 0 0.45ch;
+  max-width: 6ch;
+  animation: collapseWord 0.4s ease forwards 3.4s;
+}
+
+.poker-word {
+  display: inline-block;
+  transform-origin: left center;
+  color: #f8d766;
+  text-shadow: 0 0 12px rgba(248, 215, 102, 0.55), 0 0 24px rgba(248, 215, 102, 0.3);
+  animation: movePokerWord 0.6s ease forwards 2.9s;
+}
+
+.after-word {
+  display: inline-block;
+  margin-left: 0.45ch;
+  animation: afterWordShift 0.4s ease forwards 3.4s;
+}
+
+.welcome-button {
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    background 200ms ease,
+    color 200ms ease,
+    opacity 400ms ease,
+    transform 400ms ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35ch;
+  min-width: 140px;
+}
+
+.welcome-button.outline {
+  background: transparent;
+}
+
+.welcome-button.outline {
+  background: transparent;
+  border: none;
+}
+
+.welcome-button:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 1);
+}
+
+.welcome-replay {
+  opacity: 0;
+  animation: revealButton 2.35s ease forwards 3.9s;
+}
+
+.welcome-replay > span {
+  font-size: 1.25rem;
+  padding-bottom: 4px;
+  display: inline-block;
+  transform: rotate(0deg);
+  transition: all 400ms ease;
+  scale: 1;
+}
+
+.welcome-replay:hover > span {
+  transform: rotate(180deg);
+}
+
+.welcome-play {
+  opacity: 0;
+  display: flex;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+  scale: 1;
+  min-width: 40px;
+  width: 40px;
+  padding-left: 60px;
+  padding-right: 15px;
+  animation:
+    revealButton 0.35s ease forwards 2.1s,
+    buttonGlow 0.6s ease forwards 2.9s,
+    expandButton 0.4s ease forwards 3.1s;
+}
+
+.welcome-play:hover {
+  background: rgba(0, 0, 0, 0.9) !important;
+  scale: 1.15;
+}
+
+.label-base {
+  display: inline-block;
+}
+
+.label-extra {
+  display: inline-block;
+  margin-left: 0.35ch;
+  opacity: 0;
+  transform: translateY(-0.2em);
+  animation: labelExtraReveal 0.4s ease forwards 3s;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 24ch;
+  }
+}
+
+@keyframes typewriter-end {
+  from {
+    width: 24ch;
+  }
+  to {
+    width: 18.8ch;
+  }
+}
+
+@keyframes blinkTextCursor {
+  0% {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  30% {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes movePokerWord {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(70px) scale(0.95);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(110px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+@keyframes collapseWord {
+  0% {
+    margin: 0 0.45ch;
+    max-width: 6ch;
+  }
+  100% {
+    margin: 0;
+    max-width: 0;
+  }
+}
+
+@keyframes afterWordShift {
+  0% {
+    margin-left: 0.45ch;
+  }
+  100% {
+    margin-left: 0.9ch;
+  }
+}
+
+@keyframes cursorShift {
+  0% {
+    padding-right: 0.5em;
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  100% {
+    padding-right: 0.3em;
+    border-right-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+@keyframes revealButton {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes buttonGlow {
+  0% {
+    color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+  }
+  100% {
+    color: #f8d766;
+    border-color: #f8d766;
+    background: rgba(30, 20, 0, 0.35);
+    box-shadow: 0 0 18px rgba(248, 215, 102, 0.55), 0 0 36px rgba(248, 215, 102, 0.3);
+  }
+}
+
+@keyframes labelExtraReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-0.2em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandButton {
+  0% {
+    width: 40px;
+    min-width: 40px;
+    padding-left: 60px;
+  }
+  100% {
+    width: 140px;
+    min-width: 140px;
+    padding-left: 15px;
+  }
+}
+
+.anim-typewriter {
+  animation: typewriter 2s steps(24) 0.2s 1 both,
+    blinkTextCursor 0.9s steps(24) infinite normal,
+    typewriter-end 0.4s ease forwards 3.4s;
+}

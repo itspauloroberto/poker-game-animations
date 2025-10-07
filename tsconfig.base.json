@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "lib": ["ES2021", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ui": ["packages/ui/src/index"],
+      "@ui/*": ["packages/ui/src/*"],
+      "@game-core": ["packages/game-core/src/index"],
+      "@game-core/*": ["packages/game-core/src/*"],
+      "@animations": ["packages/animations/src/index"],
+      "@animations/*": ["packages/animations/src/*"]
+    }
+  }
+}
