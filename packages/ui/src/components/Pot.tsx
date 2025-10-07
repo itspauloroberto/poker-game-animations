@@ -10,26 +10,42 @@ export type PotProps = {
 const formatCurrency = (value: number) => `$${value.toFixed(0)}`;
 
 export const Pot = ({ amount }: PotProps) => {
-  const { color, radius, space } = useTokens();
+  const { color, radius, space, font } = useTokens();
   return (
     <View
       style={{
         alignItems: "center",
         justifyContent: "center",
-        gap: space.xs
+        gap: space.xs,
+        pointerEvents: "none",
       }}
-      pointerEvents="none"
     >
-      <ChipStack count={Math.min(6, Math.max(2, Math.round(amount / 25) || 2))} />
+      <ChipStack
+        count={Math.min(6, Math.max(2, Math.round(amount / 25) || 2))}
+      />
       <View
         style={{
           paddingVertical: space.xs,
           paddingHorizontal: space.md,
           borderRadius: radius.sm,
-          backgroundColor: color.accent
+          backgroundColor: color.accent,
         }}
       >
-        <Text style={{ color: color.background, fontWeight: "700" }}>Pot: {formatCurrency(amount)}</Text>
+        <Text
+          style={{
+            color: color.background,
+            fontFamily: font.body,
+            fontWeight: "700",
+            letterSpacing: 0.5,
+          }}
+        >
+          POT:{" "}
+          <Text
+            style={{ fontFamily: font.mono, fontVariant: ["tabular-nums"] }}
+          >
+            {formatCurrency(amount)}
+          </Text>
+        </Text>
       </View>
     </View>
   );

@@ -8,14 +8,16 @@ type H1Props = {
 };
 
 export const H1 = ({ children }: H1Props) => {
-  const { color, space } = useTokens();
+  const { color, space, font } = useTokens();
   return (
     <Text
       style={{
         color: color.textPrimary,
-        fontSize: 24,
+        fontFamily: font.heading,
+        fontSize: 32,
         fontWeight: "700",
-        marginBottom: space.sm
+        letterSpacing: 1.5,
+        marginBottom: space.sm,
       }}
     >
       {children}

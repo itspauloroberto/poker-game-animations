@@ -4,6 +4,7 @@ export { H1 } from "./components/H1";
 export { ThemeToggle } from "./components/ThemeToggle";
 export { Table } from "./components/Table";
 export { CardFace } from "./components/CardFace";
+export { HoverableCard } from "./components/HoverableCard";
 export { ChipStack } from "./components/ChipStack";
 export { DealAnimation } from "./components/DealAnimation";
 export { ChipMovement } from "./components/ChipMovement";

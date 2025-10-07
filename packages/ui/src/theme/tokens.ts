@@ -12,10 +12,17 @@ type ThemeColors = {
   chip: string;
 };
 
+type ThemeFonts = {
+  heading: string;
+  body: string;
+  mono: string;
+};
+
 export type ThemeTokens = {
   radius: Record<Radii, number>;
   space: Record<Spaces, number>;
   color: ThemeColors;
+  font: ThemeFonts;
 };
 
 const baseRadii: ThemeTokens["radius"] = {
@@ -31,10 +38,17 @@ const baseSpace: ThemeTokens["space"] = {
   lg: 16
 };
 
+const baseFonts: ThemeTokens["font"] = {
+  heading: "Bebas Neue, Oswald, sans-serif",
+  body: "Oswald, system-ui, sans-serif",
+  mono: "Roboto Mono, Courier New, monospace"
+};
+
 export const themes: Record<ThemeName, ThemeTokens> = {
   casinoNight: {
     radius: baseRadii,
     space: baseSpace,
+    font: baseFonts,
     color: {
       background: "#0a0f14",
       surface: "#111b24",
@@ -47,6 +61,7 @@ export const themes: Record<ThemeName, ThemeTokens> = {
   neonTech: {
     radius: baseRadii,
     space: baseSpace,
+    font: baseFonts,
     color: {
       background: "#010306",
       surface: "#08111c",

@@ -5,12 +5,12 @@ import type { ThemeName } from "../theme/tokens";
 
 const labels: Record<ThemeName, string> = {
   casinoNight: "Casino Night",
-  neonTech: "Neon Tech"
+  neonTech: "Neon Tech",
 };
 
 export const ThemeToggle = () => {
   const { name, setTheme } = useTheme();
-  const { color, space, radius } = useTokens();
+  const { color, space, radius, font } = useTokens();
   const lastIndex = availableThemes.length - 1;
 
   return (
@@ -20,7 +20,7 @@ export const ThemeToggle = () => {
         alignItems: "center",
         backgroundColor: color.surface,
         padding: space.xs,
-        borderRadius: radius.md
+        borderRadius: radius.md,
       }}
     >
       {availableThemes.map((theme, index) => {
@@ -37,13 +37,15 @@ export const ThemeToggle = () => {
               borderRadius: radius.sm,
               backgroundColor: isActive ? color.accent : "transparent",
               marginRight: index === lastIndex ? 0 : space.xs,
-              opacity: pressed ? 0.8 : 1
+              opacity: pressed ? 0.8 : 1,
             })}
           >
             <Text
               style={{
                 color: isActive ? color.background : color.textSecondary,
-                fontWeight: "600"
+                fontFamily: font.body,
+                fontWeight: "600",
+                letterSpacing: 0.5,
               }}
             >
               {labels[theme]}

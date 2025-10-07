@@ -17,11 +17,11 @@ export const TableLayout = ({ children }: TableLayoutProps) => {
         borderWidth: 2,
         borderColor: color.accent,
         width: "100%",
-        maxWidth: 720,
-        minHeight: 420,
+        maxWidth: 1020,
+        minHeight: 520,
         aspectRatio: 16 / 9,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
       }}
     >
       {children}
